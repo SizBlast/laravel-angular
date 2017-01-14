@@ -25,10 +25,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        $comment = new Comment;
+        $comment = new Comment();
 
         $comment->author = $request->author;
         $comment->text = $request->text;
+
+        $comment->save();
 
         return response()->json(array('success' => true));
     }

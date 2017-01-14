@@ -15,5 +15,7 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
     mix.sass('app.scss')
-       .webpack('app.js');
+       .webpack('app.js')
+       .webpack('controllers/mainCtrl.js', './public/js/controllers/mainCtrl.js')
+       .webpack('services/commentService.js', './public/js/services/commentService.js');
 });
